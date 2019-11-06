@@ -1,15 +1,18 @@
   
 const express = require('express');
 
-//// configure routes
-
 
 //// configure mongo
 
-
-
 /// Initialise the express server
 const app = express();
+
+const routes = require("./routes");
+
+routes.forEach(r => {
+    r(app);
+});
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT , () => {
