@@ -5,7 +5,11 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js | bunyan",
-    "start-prod": "set NODE_ENV=production && node app.js"
+    "build": "node scripts/build.js",
+    "start-prod": "node scripts/startProd.js",
+    "docker:build": "docker build --rm -t myworld-node-app .",
+    "docker:start": "docker run --rm -it -p 4000:4000 -d supranpersonal/myworld-node-server:dev",
+    "docker": "npm run docker:build && npm run docker:start"
   },
   "repository": {
     "type": "git",
@@ -32,10 +36,28 @@
     "passport-local": "^1.0.0",
     "path-parser": "^4.2.0",
     "uniqid": "^5.1.0",
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "morgan": "^1.9.1",
+    "response-time": "^2.3.2"
   },
   "devDependencies": {
+    "chalk": "^3.0.0",
     "concurrently": "^5.0.0",
-    "nodemon": "^1.19.4"
+    "fs-extra": "^8.1.0",
+    "nodemon": "^1.19.4",
+    "webpack": "^4.41.5",
+    "webpack-format-messages": "^2.0.6",
+    "webpack-node-externals": "^1.7.2",
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-dynamic-import-node": "^2.3.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "case-sensitive-paths-webpack-plugin": "^2.2.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "3.9.0"
   }
 }
