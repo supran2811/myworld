@@ -31,7 +31,7 @@ routes.forEach(r => {
 if (process.env.NODE_ENV !== "production") {
     const PORT = process.env.PORT || 4000;
     app.listen(PORT, () => {
-        logger.printLog("info", `App is running on port ${PORT}`);
+        logger.printLog("info", `This App is running on port ${PORT}`);
     });
 }
 
