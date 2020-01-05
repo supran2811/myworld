@@ -7,7 +7,7 @@
     "start": "nodemon app.js | bunyan",
     "build": "node scripts/build.js",
     "start-prod": "node scripts/startProd.js",
-    "docker:build": "docker build --rm -t myworld-node-app .",
+    "docker:build": "docker build --rm -t supranpersonal/myworld-node-server:dev .",
     "docker:start": "docker run --rm -it -p 4000:4000 -d supranpersonal/myworld-node-server:dev",
     "docker": "npm run docker:build && npm run docker:start"
   },
