@@ -1,0 +1,7 @@
+{
+    "env" : {
+        "MONGO_USER" : "supran",
+        "MONGO_PASSWORD" : "1234",
+        "MONGO_DBNAME" : "myworldDb"
+    }
+}

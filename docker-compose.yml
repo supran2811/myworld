@@ -8,3 +8,6 @@ services:
     - PORT=4000
     - NODE_ENV=development
     - ENV_NAME=local
+    - MONGO_USER=supran
+    - MONGO_PASSWORD=1234
+    - MONGO_DBNAME=myworldDb

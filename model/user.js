@@ -18,11 +18,8 @@ const userSchema = new Schema({
         require: true
     },
     phoneNumber: String,
-    country: {
-        type: String,
-        required: true
-    }
+    profilePhotoUrl: String
 
 },{timestamps:true});
 
-module.exports = new model(userSchema);
+module.exports = new model('user',userSchema);
