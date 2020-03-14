@@ -35,8 +35,9 @@ module.exports = app => {
             throw new Error("Phone number is not valid!!");
         }
         else return true;
-    })], createUser);
+    })],(req,res,next) => createUser(req,res,next,app));
 
-    app.post("/login", loginUser);
+    app.post("/login", [check('username').isLength({ min: 4 }).withMessage("Username and password are invalid"),
+    check('password').isLength({ min: 8 }).withMessage("Username and password are invalid")], loginUser);
 
 }
